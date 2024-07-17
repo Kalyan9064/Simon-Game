@@ -10,6 +10,9 @@ let highScore = 0;
 let h1 = document.querySelector("h1");
 let h3 = document.querySelector("h3");
 
+let st=document.getElementById("start");
+
+
 const sounds = {
     red: new Audio('Sound Track/sounds_red.mp3'),
     green: new Audio('Sound Track/sounds_green.mp3'),
@@ -18,8 +21,8 @@ const sounds = {
     wrong: new Audio('Sound Track/sounds_end.mp3'),
 };
 
-document.addEventListener("keypress", function() {
-    console.log("You pressed a key");
+st.addEventListener("click", function() {
+    console.log("You pressed start button");
     if (!started) {
         started = true;
         levelUp();
@@ -45,7 +48,7 @@ function btnFlash(btn) {
     sounds[color].play();
     setTimeout(function() {
         btn.classList.remove("flash");
-    }, 250);
+    }, 300);
 }
 
 function btnPress() {
@@ -72,7 +75,8 @@ function checkUserSeq(currentLevel) {
 
 function gameOver() {
     console.log("Game Over");
-    h3.innerText = `Game Over, Press Any Key to Restart`;
+    alert("GAME OVER");
+    h3.innerText = `Game Over, Press START button to Restart`;
     if (level > highScore) {
         highScore = level - 1;
         h1.innerText = `Simon Game - High Score: ${highScore}`;

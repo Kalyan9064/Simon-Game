@@ -62,9 +62,22 @@ h3 {
 
 .btn.flash {
     opacity: 0.6;
+    background-color: white;
 }
 
 .btn:active {
     box-shadow: 0 2px rgba(0,0,0,0.1);
-    transform: translateY(4px);
+    background-color: white; 
+}
+.start{
+    height: 30px;
+    width: 100px;
+    border: none;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: #333;
+    color: white;
+    border-radius:20px;
 }
